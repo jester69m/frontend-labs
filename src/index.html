@@ -1,22 +1,364 @@
 <!DOCTYPE html>
 <html lang="en">
 
-   <head itemscope itemtype="http://schema.org/WebSite">
+<head itemscope itemtype="http://schema.org/WebSite">
 
-      <meta charset="utf-8">
-      <meta http-equiv="x-ua-compatible" content="ie=edge">
-      <meta name="msapplication-tap-highlight" content="no">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <title>Project</title>
+    <title>Project</title>
 
-      <link rel="stylesheet" href="./css/app.css">
+    <link rel="stylesheet" href="./css/app.css">
 
-   </head>
+</head>
 
-   <body itemscope itemtype="http://schema.org/WebPage">
+<body itemscope itemtype="http://schema.org/WebPage">
+<header class="header">
+    <div class="header-content">
+        <div class="logo"></div>
+        <input type="text" placeholder="Name, note or age to search" class="search-input">
+        <button class="search-button">Search</button>
+    </div>
+</header>
 
-      <script type="text/javascript" src="../build/app.js"></script>
-      
-  </body>
+<!-- Navigation Buttons -->
+<nav class="nav-buttons">
+    <div class="nav-left">
+        <button class="nav-button">Teachers</button>
+        <button class="nav-button">Statistics</button>
+        <button class="nav-button">Favourites</button>
+        <button class="nav-button">About</button>
+    </div>
+    <div class="nav-right">
+        <button class="act-button" id="open-add-teacher">Add Teacher</button>
+    </div>
+</nav>
+
+<hr>
+
+<!-- Top Teachers Section -->
+<section class="top-teachers">
+    <h1>Top Teachers</h1>
+    <!-- Filters -->
+    <div class="filters">
+        <label>Age:
+            <select>
+                <option value="20-30">20-30</option>
+                <option value="30-40">30-40</option>
+                <option value="40-50">40-50</option>
+            </select>
+        </label>
+        <div class="separator"></div>
+        <label>Region:
+            <select>
+                <option value="europe">Europe</option>
+                <option value="asia">Asia</option>
+            </select>
+        </label>
+        <div class="separator"></div>
+        <label>Sex:
+            <select>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+        </label>
+        <div class="separator"></div>
+        <label><input type="checkbox"> Only with photo</label>
+        <div class="separator"></div>
+        <label><input type="checkbox"> Only favourites</label>
+    </div>
+
+    <!-- List of Teachers -->
+    <div class="teacher-list">
+        <!-- Example Teachers -->
+        <div class="teacher-item" id="open-teacher-info">
+            <img src="images/teacher1.jpg" alt="Teacher Photo" class="teacher-photo">
+            <div class="teacher-info">
+                <p>John Doe</p>
+                <p>Mathematics</p>
+                <p>USA</p>
+            </div>
+        </div>
+        <div class="teacher-item">
+            <img src="images/teacher2.jpg" alt="Teacher Photo" class="teacher-photo">
+            <div class="teacher-info">
+                <p>Jane Smith</p>
+                <p>Physics</p>
+                <p>Canada</p>
+            </div>
+        </div>
+        <div class="teacher-item">
+            <img src="images/teacher3.jpg" alt="Teacher Photo" class="teacher-photo">
+            <div class="teacher-info">
+                <p>Liu Wei</p>
+                <p>Chemistry</p>
+                <p>China</p>
+            </div>
+        </div>
+        <div class="teacher-item">
+            <img src="images/teacher4.jpg" alt="Teacher Photo" class="teacher-photo">
+            <div class="teacher-info">
+                <p>Maria Garcia</p>
+                <p>Biology</p>
+                <p>Spain</p>
+            </div>
+        </div>
+        <div class="teacher-item">
+            <img src="images/teacher5.jpg" alt="Teacher Photo" class="teacher-photo">
+            <div class="teacher-info">
+                <p>Kunal Patel</p>
+                <p>History</p>
+                <p>India</p>
+            </div>
+        </div>
+        <div class="teacher-item">
+            <img src="images/teacher6.jpg" alt="Teacher Photo" class="teacher-photo">
+            <div class="teacher-info">
+                <p>Fatima Ali</p>
+                <p>Geography</p>
+                <p>Egypt</p>
+            </div>
+        </div>
+        <div class="teacher-item">
+            <img src="images/teacher7.jpg" alt="Teacher Photo" class="teacher-photo">
+            <div class="teacher-info">
+                <p>Yuki Tanaka</p>
+                <p>Music</p>
+                <p>Japan</p>
+            </div>
+        </div>
+        <div class="teacher-item">
+            <img src="images/teacher8.jpg" alt="Teacher Photo" class="teacher-photo">
+            <div class="teacher-info">
+                <p>Nicolas Dupont</p>
+                <p>Literature</p>
+                <p>France</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<hr>
+
+<!-- Statistics Section -->
+<section class="statistics">
+    <h1>Statistics</h1>
+    <table>
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Speciality</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Nationality</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- Example Teachers in Statistics -->
+        <tr>
+            <td class="left-text">John Doe</td>
+            <td>Mathematics</td>
+            <td>40</td>
+            <td>Male</td>
+            <td>USA</td>
+        </tr>
+        <tr>
+            <td class="left-text">Jane Smith</td>
+            <td>Physics</td>
+            <td>35</td>
+            <td>Female</td>
+            <td>Canada</td>
+        </tr>
+        <tr>
+            <td class="left-text">Liu Wei</td>
+            <td>Chemistry</td>
+            <td>50</td>
+            <td>Male</td>
+            <td>China</td>
+        </tr>
+        <tr>
+            <td class="left-text">Maria Garcia</td>
+            <td>Biology</td>
+            <td>42</td>
+            <td>Female</td>
+            <td>Spain</td>
+        </tr>
+        <tr>
+            <td class="left-text">Kunal Patel</td>
+            <td>History</td>
+            <td>38</td>
+            <td>Male</td>
+            <td>India</td>
+        </tr>
+        <tr>
+            <td class="left-text">Fatima Ali</td>
+            <td>Geography</td>
+            <td>31</td>
+            <td>Female</td>
+            <td>Egypt</td>
+        </tr>
+        <tr>
+            <td class="left-text">Yuki Tanaka</td>
+            <td>Music</td>
+            <td>29</td>
+            <td>Male</td>
+            <td>Japan</td>
+        </tr>
+        <tr>
+            <td class="left-text">Nicolas Dupont</td>
+            <td>Literature</td>
+            <td>45</td>
+            <td>Male</td>
+            <td>France</td>
+        </tr>
+        </tbody>
+    </table>
+    <!-- Pagination -->
+    <div class="pagination">
+        <a href="#">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <span>...</span>
+        <a href="#">Last</a>
+    </div>
+</section>
+
+<hr>
+
+<!-- Favourites Section -->
+<section class="favourites">
+    <h1>Favourites</h1>
+    <div class="favourite-list">
+        <div class="arrows">
+            <button>&lt;</button>
+        </div>
+        <div class="favourite-item">
+            <img src="images/teacher6.jpg" alt="Teacher Photo" class="teacher-photo">
+            <p>John Doe</p>
+            <p>USA</p>
+        </div>
+        <div class="favourite-item">
+            <img src="images/teacher3.jpg" alt="Teacher Photo" class="teacher-photo">
+            <p>Liu Wei</p>
+            <p>China</p>
+        </div>
+        <div class="arrows">
+            <button>&gt;</button>
+        </div>
+    </div>
+</section>
+
+<hr>
+
+<!-- Footer Section -->
+<footer>
+    <p class="footer-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+        been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+        scrambled it to make a type </p>
+    <p class="footer-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.?</p>
+    <p class="footer-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.?</p>
+</footer>
+
+<!-- Navigation Buttons at the bottom -->
+<nav class="nav-buttons">
+    <div class="nav-left">
+        <button class="nav-button">Teachers</button>
+        <button class="nav-button">Statistics</button>
+        <button class="nav-button">Favourites</button>
+        <button class="nav-button">About</button>
+    </div>
+    <div class="nav-right">
+        <button class="act-button" id="open-add-teacher-bottom">Add Teacher</button>
+    </div>
+</nav>
+
+<!-- Popups -->
+<!-- Teacher Info Popup -->
+<div id="popup-teacher-info" class="popup">
+    <div class="info-popup-content left-text">
+        <header>
+            <h1>Teacher Info</h1>
+            <button class="close-btn">X</button>
+        </header>
+        <div class="teacher-details">
+            <img src="images/teacher1.jpg" alt="Teacher Photo" class="teacher-photo">
+            <div class="teacher-info">
+                <p style="font-size: 2em">John Doe</p>
+                <p><strong>Mathematics</strong></p>
+                <p>USA, California</p>
+                <p>Age: 30, Sex: Male</p>
+                <p>Email: example@mail.com</p>
+                <p>Phone: +123456789</p>
+            </div>
+        </div>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley</p>
+        <p><a href="#">Toggle map</a></p>
+    </div>
+</div>
+
+<!-- Add Teacher Popup -->
+<div id="popup-add-teacher" class="popup">
+    <div class="popup-content">
+        <header>
+            <h1>Add Teacher</h1>
+            <button class="close-btn">X</button>
+        </header>
+        <form>
+            <label>Name</label>
+            <input type="text" placeholder="Enter name">
+
+            <label>Speciality</label>
+            <select>
+                <option>Math</option>
+                <option>Language</option>
+                <option>Physics</option>
+                <option>Chemistry</option>
+            </select>
+            <div class="form-row">
+                <label>Country</label>
+                <select>
+                    <option>USA</option>
+                    <option>UK</option>
+                    <option>Vietnam</option>
+                </select>
+
+                <label>City</label>
+                <input type="text" placeholder="Enter city">
+            </div>
+            <div class="form-row">
+                <label>Email</label>
+                <input type="email" placeholder="Enter email">
+
+                <label>Phone</label>
+                <input type="tel" placeholder="Enter phone">
+            </div>
+
+            <label>Date of Birth</label>
+            <input type="date">
+
+            <div class="form-row">
+                <label>Sex</label>
+                <input type="radio" name="sex" value="male"> Male
+                <input type="radio" name="sex" value="female"> Female
+            </div>
+
+            <div class="form-row">
+                <label>Background Color</label>
+                <input type="color">
+
+            </div>
+
+            <label>Notes (optional)</label>
+            <textarea placeholder="Enter notes"></textarea>
+
+            <button type="submit">Add</button>
+        </form>
+    </div>
+</div>
+
+<script type="text/javascript" src="../build/app.js"></script>
+
+</body>
 </html>

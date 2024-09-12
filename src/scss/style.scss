@@ -1,0 +1,433 @@
+body {
+  font-family: Roboto, sans-serif;
+  padding: 0;
+  max-width: 210mm;
+  margin: auto;
+  color: #333;
+  border-left-width: 3px;
+  border-left-style: solid;
+  border-left-color: #f5f5f5;
+  border-right-width: 3px;
+  border-right-style: solid;
+  border-right-color: #f5f5f5;
+}
+
+hr {
+  width: 60%;
+    border: 0;
+    height: 1px;
+    background: black;
+}
+
+.footer-text {
+  text-align: left;
+  font-size: 0.8rem;
+  color: #666;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+header, nav, section, footer {
+  padding: 1rem;
+  margin: 0;
+}
+
+.header {
+  padding: 10px 20px;
+}
+
+th, td {
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.left-text {
+  text-align: left;
+}
+
+th {
+  background-color: white;
+  font-weight: bold;
+  border-bottom: #333333 1px solid;
+}
+
+tr:nth-child(even) {
+  background-color: #f3e6f5;
+}
+
+tr:hover {
+  background-color: #f1f1f1;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+th {
+  &:hover {
+    border-bottom: 2px solid #333333;
+    background-color: #dddddd;
+  }
+}
+
+.pagination {
+  text-align: left;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  width: 50%;
+  height: 50px;
+  background-image: url('../images/teachinder-logo.png');
+  background-size: cover;
+  background-position: center;
+  transition: background-image 0.3s ease;
+}
+
+.logo:hover {
+  background-image: url('../images/teachinder-logo-hover.png'); /* Image on hover */
+}
+
+.search-input {
+  flex-grow: 1;
+  padding: 5px 10px;
+  margin-right: 10px;
+}
+
+.search-button {
+  color: #ff6600;
+  background-color: white;
+  border: 1px solid #ff6600;
+  padding: 5px 10px;
+  cursor: pointer;
+
+  &:hover {
+    color: white;
+    background-color: #ff5500;
+  }
+}
+
+.nav-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.nav-button {
+  background-color: white;
+  color: #ff6600;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+
+  &:hover {
+    color: #ba4206;
+  }
+}
+
+.act-button {
+  color: #ff6600;
+  background-color: white;
+  border: 1px solid #ff6600;
+  padding: 5px 10px;
+  cursor: pointer;
+
+  &:hover {
+    color: white;
+    background-color: #ff5500;
+  }
+}
+
+.filters {
+  display: flex;
+  justify-content: space-between;
+}
+
+.separator {
+  border-left: 1px dotted #ddd;
+  height: 30px;
+  margin: 0 20px;
+}
+
+.teacher-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0;
+
+  .teacher-item {
+    text-align: center;
+    background-color: #fff;
+    padding: 1rem;
+
+    .teacher-photo {
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.favourite-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0;
+
+  .favourite-item {
+    text-align: center;
+    background-color: #fff;
+    padding: 1rem;
+
+    .teacher-photo {
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  display: none;
+}
+
+.popup-content {
+  background-color: #ffffff;
+  width: 450px;
+  padding: 20px 30px;
+  position: relative;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.popup-content header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  background-color: #333333;
+  color: white;
+}
+
+.popup-content header h1 {
+  font-size: 1.5em;
+  margin: 0;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  color: white;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  color: #ff6600;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+form label {
+  text-align: left;
+  margin-bottom: 5px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form input[type="date"],
+form select,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1em;
+  margin-top: 5px;
+}
+
+.form-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+form input[type="color"] {
+  width: 10%;
+  height: 20px;
+  padding: 5px;
+  border: none;
+  margin-top: 5px;
+}
+
+form input[type="radio"] {
+  margin-right: 10px;
+  margin-top: 5px;
+}
+
+form textarea {
+  height: 80px;
+  resize: vertical;
+}
+
+form button[type="submit"] {
+  background-color: white;
+  color: #ff6600;
+  padding: 10px 0;
+  border: 1px solid #ff6600;
+  cursor: pointer;
+  font-size: 1em;
+  margin-top: 10px;
+  &:hover {
+    background-color: #ff6600;
+    color: white;
+  }
+}
+
+.info-popup-content {
+  background-color: #fff;
+  width: 50%;
+  max-width: 600px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.info-popup-content header {
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  background-color: #333333;
+  color: white;
+}
+
+.close-btn {
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  padding: 5px 10px;
+  font-size: 1.2em;
+  border-radius: 4px;
+}
+
+.close-btn:hover {
+  color: #ff5500;
+}
+
+.teacher-details {
+  margin-bottom: 20px;
+}
+
+.teacher-photo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  float: left;
+  margin-right: 20px;
+}
+
+.teacher-info {
+  overflow: hidden;
+}
+
+.teacher-info p {
+  margin: 0 0 10px;
+}
+
+.teacher-details p:last-of-type {
+  margin-top: 10px;
+  font-size: 0.9em;
+  color: #555;
+}
+
+.teacher-details p a {
+  color: #ff6600;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.teacher-details p a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .info-popup-content {
+    width: 90%;
+    padding: 10px;
+  }
+
+  .teacher-details {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .teacher-photo {
+    float: none;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 10px;
+  }
+
+  .teacher-info {
+    text-align: center;
+  }
+
+  form {
+    display: block;
+  }
+
+  .form-row {
+    flex-direction: column;
+  }
+
+  .form-row label,
+  .form-row input {
+    width: 100%;
+  }
+
+  .pagination {
+    text-align: center;
+  }
+
+  .nav-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-button {
+    margin-bottom: 10px;
+  }
+}
