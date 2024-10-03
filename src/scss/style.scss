@@ -2,7 +2,7 @@ body {
   font-family: Roboto, sans-serif;
   padding: 0;
   max-width: 210mm;
-  margin: auto;
+  margin: 0 auto;
   color: #333;
   border-left-width: 3px;
   border-left-style: solid;
@@ -10,6 +10,7 @@ body {
   border-right-width: 3px;
   border-right-style: solid;
   border-right-color: #f5f5f5;
+  padding: 0 20px;
 }
 
 hr {
@@ -95,7 +96,7 @@ th {
 }
 
 .logo:hover {
-  background-image: url('../images/teachinder-logo-hover.png'); /* Image on hover */
+  background-image: url('../images/teachinder-logo-hover.png');
 }
 
 .search-input {
@@ -113,7 +114,7 @@ th {
 
   &:hover {
     color: white;
-    background-color: #ff5500;
+    background-color: #ff6600;
   }
 }
 
@@ -144,7 +145,7 @@ th {
 
   &:hover {
     color: white;
-    background-color: #ff5500;
+    background-color: #ff6600;
   }
 }
 
@@ -172,18 +173,33 @@ th {
 
     .teacher-photo {
       border-radius: 50%;
+      border: #ff6600 2px solid;
       width: 100px;
       height: 100px;
       margin-bottom: 10px;
+      &:hover {
+        border: #ba4206 3px solid;
+        scale: 1.1;
+      }
+    }
+    .photo-with-star {
+      position: relative;
+    }
+    .star-icon {
+      position: absolute;
+      top: 0;
+      right: 0px;
+      width: 25px;
+      height: 25px;
     }
   }
 }
 
 .favourite-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  display: flex;
+  align-items: center;
+  justify-content: center;
   gap: 1rem;
-  margin: 1rem 0;
 
   .favourite-item {
     text-align: center;
@@ -192,10 +208,41 @@ th {
 
     .teacher-photo {
       border-radius: 50%;
+      border: #ff6600 2px solid;
       width: 100px;
       height: 100px;
       margin-bottom: 10px;
+
+      &:hover {
+        border: #ba4206 3px solid;
+        scale: 1.1;
+      }
     }
+  }
+  .left-arrows {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+  .right-arrows {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+  button {
+    background-color: white;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  button img {
+    width: 20px;
+    height: 20px;
   }
 }
 
@@ -225,7 +272,6 @@ th {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #ddd;
   padding-bottom: 10px;
   margin-bottom: 20px;
   background-color: #333333;
@@ -343,11 +389,19 @@ form button[type="submit"] {
 }
 
 .close-btn:hover {
-  color: #ff5500;
+  color: #ff6600;
 }
 
 .teacher-details {
   margin-bottom: 20px;
+  img {
+    width: 200px;
+    height: 200px;
+    border-radius: 0%;
+    object-fit: cover;
+    float: left;
+    margin-right: 20px;
+  }
 }
 
 .teacher-photo {
@@ -357,10 +411,6 @@ form button[type="submit"] {
   object-fit: cover;
   float: left;
   margin-right: 20px;
-}
-
-.teacher-info {
-  overflow: hidden;
 }
 
 .teacher-info p {
@@ -384,9 +434,28 @@ form button[type="submit"] {
 }
 
 @media (max-width: 768px) {
+  body {
+    padding: 0;
+    border: white 0px solid;
+  }
+  .header-content {
+    flex-direction: column;
+    align-items: center;
+    button {
+        margin-top: 10px;
+    }
+  }
   .info-popup-content {
     width: 90%;
     padding: 10px;
+  }
+  .filters {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    .separator {
+      display: none;
+    }
   }
 
   .teacher-details {
@@ -429,5 +498,17 @@ form button[type="submit"] {
 
   .nav-button {
     margin-bottom: 10px;
+  }
+
+  .favourites {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .favourites-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }

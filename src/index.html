@@ -45,14 +45,18 @@
     <div class="filters">
         <label>Age:
             <select>
-                <option value="20-30">20-30</option>
-                <option value="30-40">30-40</option>
-                <option value="40-50">40-50</option>
+                <option value="0">Any</option>
+                <option value="1">13-17</option>
+                <option value="2">18-29</option>
+                <option value="3">30-39</option>
+                <option value="4">40-49</option>
+                <option value="5">50+</option>
             </select>
         </label>
         <div class="separator"></div>
         <label>Region:
             <select>
+                <option value="any">Any</option>
                 <option value="europe">Europe</option>
                 <option value="asia">Asia</option>
             </select>
@@ -60,21 +64,23 @@
         <div class="separator"></div>
         <label>Sex:
             <select>
+                <option value="any">Any</option>
                 <option value="male">Male</option>
                 <option value="female">Female</option>
             </select>
         </label>
         <div class="separator"></div>
-        <label><input type="checkbox"> Only with photo</label>
+        <label><input type="checkbox" id="photo-filter">Only with photo</label>
         <div class="separator"></div>
-        <label><input type="checkbox"> Only favourites</label>
+        <label><input type="checkbox" id="favorite-filter">Only favourites</label>
     </div>
 
-    <!-- List of Teachers -->
     <div class="teacher-list">
-        <!-- Example Teachers -->
         <div class="teacher-item" id="open-teacher-info">
-            <img src="images/teacher1.jpg" alt="Teacher Photo" class="teacher-photo">
+            <div class="photo-with-star">
+                <img src="images/1.jpg" alt="Teacher Photo" class="teacher-photo">
+                <img src="images/star.svg" alt="Star" class="star-icon">
+            </div>
             <div class="teacher-info">
                 <p>John Doe</p>
                 <p>Mathematics</p>
@@ -82,7 +88,7 @@
             </div>
         </div>
         <div class="teacher-item">
-            <img src="images/teacher2.jpg" alt="Teacher Photo" class="teacher-photo">
+            <img src="images/8.jpg" alt="Teacher Photo" class="teacher-photo">
             <div class="teacher-info">
                 <p>Jane Smith</p>
                 <p>Physics</p>
@@ -90,7 +96,10 @@
             </div>
         </div>
         <div class="teacher-item">
-            <img src="images/teacher3.jpg" alt="Teacher Photo" class="teacher-photo">
+            <div class="photo-with-star">
+                <img src="images/4.jpg" alt="Teacher Photo" class="teacher-photo">
+                <img src="images/star.svg" alt="Star" class="star-icon">
+            </div>
             <div class="teacher-info">
                 <p>Liu Wei</p>
                 <p>Chemistry</p>
@@ -98,7 +107,7 @@
             </div>
         </div>
         <div class="teacher-item">
-            <img src="images/teacher4.jpg" alt="Teacher Photo" class="teacher-photo">
+            <img src="images/5.jpg" alt="Teacher Photo" class="teacher-photo">
             <div class="teacher-info">
                 <p>Maria Garcia</p>
                 <p>Biology</p>
@@ -106,7 +115,7 @@
             </div>
         </div>
         <div class="teacher-item">
-            <img src="images/teacher5.jpg" alt="Teacher Photo" class="teacher-photo">
+            <img src="images/3.jpg" alt="Teacher Photo" class="teacher-photo">
             <div class="teacher-info">
                 <p>Kunal Patel</p>
                 <p>History</p>
@@ -114,7 +123,7 @@
             </div>
         </div>
         <div class="teacher-item">
-            <img src="images/teacher6.jpg" alt="Teacher Photo" class="teacher-photo">
+            <img src="images/7.jpg" alt="Teacher Photo" class="teacher-photo">
             <div class="teacher-info">
                 <p>Fatima Ali</p>
                 <p>Geography</p>
@@ -122,7 +131,7 @@
             </div>
         </div>
         <div class="teacher-item">
-            <img src="images/teacher7.jpg" alt="Teacher Photo" class="teacher-photo">
+            <img src="images/6.jpg" alt="Teacher Photo" class="teacher-photo">
             <div class="teacher-info">
                 <p>Yuki Tanaka</p>
                 <p>Music</p>
@@ -130,7 +139,7 @@
             </div>
         </div>
         <div class="teacher-item">
-            <img src="images/teacher8.jpg" alt="Teacher Photo" class="teacher-photo">
+            <img src="images/2.jpg" alt="Teacher Photo" class="teacher-photo">
             <div class="teacher-info">
                 <p>Nicolas Dupont</p>
                 <p>Literature</p>
@@ -227,32 +236,39 @@
 
 <hr>
 
-<!-- Favourites Section -->
 <section class="favourites">
     <h1>Favourites</h1>
     <div class="favourite-list">
-        <div class="arrows">
-            <button>&lt;</button>
+        <div class="left-arrows">
+            <button>
+                <img src="images/arrow-left.svg" alt="Left Arrow">
+            </button>
         </div>
         <div class="favourite-item">
-            <img src="images/teacher6.jpg" alt="Teacher Photo" class="teacher-photo">
-            <p>John Doe</p>
-            <p>USA</p>
+            <img src="images/1.jpg" alt="Teacher Photo" class="teacher-photo">
+            <div class="teacher-info">
+                <p>John Doe</p>
+                <p>USA</p>
+            </div>
+
         </div>
         <div class="favourite-item">
-            <img src="images/teacher3.jpg" alt="Teacher Photo" class="teacher-photo">
-            <p>Liu Wei</p>
-            <p>China</p>
+            <img src="images/4.jpg" alt="Teacher Photo" class="teacher-photo">
+            <div class="teacher-info">
+                <p>Liu Wei</p>
+                <p>China</p>
+            </div>
         </div>
-        <div class="arrows">
-            <button>&gt;</button>
+        <div class="right-arrows">
+            <button>
+                <img src="images/arrow-right.svg" alt="Right Arrow">
+            </button>
         </div>
     </div>
 </section>
 
 <hr>
 
-<!-- Footer Section -->
 <footer>
     <p class="footer-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
         been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
@@ -261,7 +277,6 @@
     <p class="footer-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.?</p>
 </footer>
 
-<!-- Navigation Buttons at the bottom -->
 <nav class="nav-buttons">
     <div class="nav-left">
         <button class="nav-button">Teachers</button>
@@ -283,17 +298,19 @@
             <button class="close-btn">X</button>
         </header>
         <div class="teacher-details">
-            <img src="images/teacher1.jpg" alt="Teacher Photo" class="teacher-photo">
+            <img src="images/1.jpg" alt="Teacher Photo" class="teacher-photo">
             <div class="teacher-info">
                 <p style="font-size: 2em">John Doe</p>
                 <p><strong>Mathematics</strong></p>
                 <p>USA, California</p>
                 <p>Age: 30, Sex: Male</p>
-                <p>Email: example@mail.com</p>
+                <p style="color: #b3d4fc">Email: example@mail.com</p>
                 <p>Phone: +123456789</p>
             </div>
         </div>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley</p>
+        <p style="font-size: 0.6em; margin-bottom: 10px">Lorem Ipsum is simply dummy text of the printing and
+            typesetting industry. Lorem Ipsum has been the
+            industry's standard dummy text ever since the 1500s, when an unknown printer took a galley</p>
         <p><a href="#">Toggle map</a></p>
     </div>
 </div>
